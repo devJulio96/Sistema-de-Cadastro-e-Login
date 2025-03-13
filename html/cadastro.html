@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+</head>
+<body>
+    <h1>Tela de Cadastro</h1>
+    <form id="formulario">
+        <label for="usuario">Nome de Usuário</label>
+        <input type="text" name="usuario" id="usuario" required><br>
+        <label for="email">E-mail</label>
+        <input type="email" name="email" id="email" required><br>
+        <label for="senha">Crie sua senha</label>
+        <input type="password" name="senha" id="senha" minlength="5" required>
+        <input type="checkbox" name="mostrarSenha" id="mostrarSenha"><br>
+        <label for="confSenha">Confirme sua senha</label>
+        <input type="password" name="confSenha" id="confSenha" minlength="5" required>
+        <input type="checkbox" name="mostrarConfirmacao" id="mostrarConfirmacao"><br>
+        <button>Criar Conta</button>
+    </form>
+    <p>Já tem uma conta? <a href="../html/login.html"> Entre</a></p>
+    <script src="../script/cadastro.js"></script>
+</body>
+</html>
