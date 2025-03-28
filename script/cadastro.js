@@ -44,7 +44,7 @@ formulario.addEventListener("submit", (evt) => {
 
   } else {
     if(localStorage.getItem("usuario") === undefined || localStorage.getItem("usuario") === null) {
-      usuarios.push({usuario: usuario.value, email: email.value, senha: senha.value});
+      usuarios.push({usuario: usuario.value, email: email.value.toLowerCase(), senha: senha.value});
 
       localStorage.setItem("usuario", JSON.stringify(usuarios));
   
@@ -56,7 +56,7 @@ formulario.addEventListener("submit", (evt) => {
         usuarios.push(cadastro);
       }
 
-      usuarios.push({usuario: usuario.value, email: email.value, senha: senha.value});
+      usuarios.push({usuario: usuario.value, email: email.value.toLowerCase(), senha: senha.value});
       localStorage.setItem("usuario", JSON.stringify(usuarios));
   
       window.location.href = "../html/login.html"
