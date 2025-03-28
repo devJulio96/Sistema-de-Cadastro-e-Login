@@ -14,8 +14,9 @@ mostrarSenha.addEventListener("click", (evt) => {
 
 formulario.addEventListener("submit", (evt) => {
   evt.preventDefault();
+  const usuariosCadastrados = JSON.parse(localStorage.getItem("usuario"))
 
-  for(let cadastro of JSON.parse(localStorage.getItem("usuario"))){
+  for(let cadastro of usuariosCadastrados){
     if (email.value === cadastro.email && senha.value === cadastro.senha) {
       window.location.href = "../html/home.html";
       email.value = "";
@@ -25,7 +26,7 @@ formulario.addEventListener("submit", (evt) => {
     }
   }
 
-  if(vefiricador === JSON.parse(localStorage.getItem("usuario")).length){
+  if(vefiricador === usuariosCadastrados.length){
     alert("Email ou senha incorretos")
     email.focus();
   }
