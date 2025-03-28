@@ -20,21 +20,22 @@ formulario.addEventListener("submit", (evt) => {
         email.value = "";
         senha.value = "";
       } else{
-        verificadorSenha ++
+        verificadorSenha ++;
       }
     } else {
-      verificadorEmail++
+      verificadorEmail++;
     }
   }
 
   if(verificadorEmail === usuariosCadastrados.length){
-    alert("Email não cadastrado, por favor cadastre-se!")
-    verificadorEmail = 0
+    alert("Email não cadastrado, por favor cadastre-se!");
+    verificadorEmail = 0;
+    senha.value ="";
     email.focus();
   }
   if(verificadorSenha === usuariosCadastrados.length){
-    alert("Senha incorreta!")
-    verificadorSenha = 0
+    alert("Senha incorreta!");
+    verificadorSenha = 0;
     senha.focus();
   }
 });

@@ -15,21 +15,10 @@ const limparCampos = () =>{
   mostrarConfirmacao.checked = false;
 }
 
-mostrarSenha.addEventListener("click", (evt)=>{
-  if(evt.target.checked) {
-    senha.type = "text";
-  } else {
-    senha.type = "password"
-  }
-})
+const exibir = (evt) => { evt.target.checked ? senha.type = "text" : senha.type = "password"};
 
-mostrarConfirmacao.addEventListener("click", (evt)=>{
-  if(evt.target.checked) {
-    confSenha.type = "text";
-  } else {
-    confSenha.type = "password"
-  }
-})
+mostrarSenha.addEventListener("click", exibir);
+mostrarConfirmacao.addEventListener("click", exibir);
 
 formulario.addEventListener("submit", (evt) => {
   evt.preventDefault();
@@ -39,11 +28,11 @@ formulario.addEventListener("submit", (evt) => {
   if(senha.value !== confSenha.value){
     
     formulario.removeEventListener("submit", e => e.preventDefault());
-    alert("Digite sua senha corretamente")
+    alert("Digite sua senha corretamente");
     confSenha.focus(); 
 
   } else {
-    if(localStorage.getItem("usuario") === undefined || localStorage.getItem("usuario") === null) {
+    if(localStorage.getItem("usuario") === null) {
       usuarios.push({usuario: usuario.value, email: email.value.toLowerCase(), senha: senha.value});
 
       localStorage.setItem("usuario", JSON.stringify(usuarios));
