@@ -19,6 +19,7 @@ formulario.addEventListener("submit", (evt) => {
     window.location.href = "../html/home.html";
     email.value = "";
     senha.value = "";
+    mostrarSenha.checked = false;
   }
 
   for(let cadastro of usuariosCadastrados){
@@ -37,7 +38,6 @@ formulario.addEventListener("submit", (evt) => {
     email.focus();
   } else if(!senhaCorreta){
     alert("Senha incorreta!");
-    senhaCorreta = 0;
     senha.focus();
   } else {
     redirecionarPagina();
